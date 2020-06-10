@@ -10,7 +10,6 @@ uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 if uploaded_file is not None:
  	
     TARGET_SIZE = (224, 224)	
-    st.write(uploaded_file)		
     uploaded = Image.open(uploaded_file)	
     model = load_model('DogCatClassifier.h5')
     st.image(uploaded, caption = 'image uploaded...', use_column_width = True)
