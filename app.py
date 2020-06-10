@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 from tensorflow.keras.models import load_model
 import numpy as np
+import time
 
 st.title("Flower Classification")
 
@@ -13,6 +14,7 @@ try:
 	if uploaded_file is not None:
 	    TARGET_SIZE = (224, 224)			
 	    uploaded = Image.open(uploaded_file)
+	    time.sleep(5)
 	    actual_class = st.radio("What is the actual class?", classes)
 	    model = load_model('flower.h5')
 	    st.image(uploaded, caption = 'image uploaded...', use_column_width = True)
