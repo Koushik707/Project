@@ -11,7 +11,7 @@ try:
 	classes = ["Daisy","Dandelion","Rose","Sunflower","Tulip"]
 	
 	if uploaded_file is not None:
-	    actual_class = st.radio("What is the actual class?", ("Daisy","Dandelion","Rose","Sunflower","Tulip"))
+	    actual_class = st.radio("<h1>What is the actual class?</h1>", classes)
 	    TARGET_SIZE = (224, 224)			
 	    uploaded = Image.open(uploaded_file)	
 	    model = load_model('flower.h5')
