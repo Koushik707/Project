@@ -17,8 +17,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 def extract_features(movies, main):
 
 	genre_vector = CountVectorizer().fit_transform(movies.genre)
-	director_vector = CountVectorizer(max_features=500).fit_transform(movies.director)
-	casts_vector = CountVectorizer(max_features=5000).fit_transform(movies.casts)
+	director_vector = CountVectorizer(max_features=100).fit_transform(movies.director)
+	casts_vector = CountVectorizer(max_features=1000).fit_transform(movies.casts)
 	genre_vector_data = pd.DataFrame(genre_vector.toarray(), columns = ['genre'+str(i) for i in range(genre_vector.shape[1])])
 	director_vector_data = pd.DataFrame(director_vector.toarray(), columns = ['director'+str(i) for i in range(director_vector.shape[1])])
 	casts_vector_data = pd.DataFrame(casts_vector.toarray(), columns = ['casts'+str(i) for i in range(casts_vector.shape[1])])
